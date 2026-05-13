@@ -1,0 +1,273 @@
+import { Link } from "react-router";
+import { EventCard } from "../components/EventCard";
+import { mockEvents } from "../data/mockData";
+import {
+  Sparkles,
+  Users,
+  Car,
+  Home as HomeIcon,
+  Ticket,
+  Heart,
+  ArrowRight,
+  Music4,
+  MapPin,
+  Calendar
+} from "lucide-react";
+
+export function Home() {
+  const featuredEvents = mockEvents.slice(0, 3);
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="relative min-h-[600px] md:min-h-[700px] overflow-hidden flex items-center">
+        <div className="absolute inset-0">
+          <img
+            src="https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=1920&q=80"
+            alt="Concierto en vivo"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#121212]/60 via-[#121212]/80 to-[#121212]" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="max-w-3xl">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#9D4EDD]/20 border border-[#9D4EDD]/30 rounded-full mb-6">
+              <Music4 className="w-4 h-4 text-[#9D4EDD]" />
+              <span className="text-sm font-medium">La mejor app para conciertos y festivales música</span>
+            </div>
+
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+              La red social musical para{" "}
+              <span className="bg-gradient-to-r from-[#FF2E63] to-[#9D4EDD] bg-clip-text text-transparent">
+                fans de conciertos
+              </span>
+            </h1>
+
+            <p className="text-xl md:text-2xl text-gray-300 mb-4">
+              Descubre eventos musicales, conoce gente en conciertos y encuentra compañeros para conciertos.
+            </p>
+
+            <p className="text-lg md:text-xl text-gray-400 mb-8">
+              Carpooling conciertos, alojamiento festivales y viaja a conciertos barato. Todo en una sola app.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                to="/discover"
+                className="px-8 py-4 bg-gradient-to-r from-[#FF2E63] to-[#9D4EDD] rounded-full font-semibold hover:shadow-lg hover:shadow-[#FF2E63]/50 transition-all transform hover:scale-105 text-center flex items-center justify-center gap-2"
+              >
+                Explorar eventos
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+
+              <Link
+                to="/login"
+                className="px-8 py-4 bg-[#1E1E24] border border-white/10 rounded-full font-semibold hover:border-[#9D4EDD] transition-all text-center"
+              >
+                Empezar gratis
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            Todo lo que necesitas para tus{" "}
+            <span className="bg-gradient-to-r from-[#FF2E63] to-[#9D4EDD] bg-clip-text text-transparent">
+              eventos musicales
+            </span>
+          </h2>
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            Compartir coche conciertos, alojamiento y nuevos amigos para vivir la experiencia completa
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Feature 1 */}
+          <div className="p-8 rounded-3xl bg-gradient-to-br from-[#1E1E24] to-[#121212] border border-white/10 hover:border-[#FF2E63]/50 transition-all transform hover:scale-105">
+            <div className="w-14 h-14 rounded-2xl bg-[#FF2E63]/15 flex items-center justify-center mb-6">
+              <Users className="w-7 h-7 text-[#FF2E63]" />
+            </div>
+            <h3 className="text-2xl font-bold mb-3">Conocer gente conciertos</h3>
+            <p className="text-gray-400">
+              Encuentra compañeros para conciertos que compartan tus gustos musicales. Conecta con otros fans y vive la experiencia juntos.
+            </p>
+          </div>
+
+          {/* Feature 2 */}
+          <div className="p-8 rounded-3xl bg-gradient-to-br from-[#1E1E24] to-[#121212] border border-white/10 hover:border-[#08D9D6]/50 transition-all transform hover:scale-105">
+            <div className="w-14 h-14 rounded-2xl bg-[#08D9D6]/15 flex items-center justify-center mb-6">
+              <Car className="w-7 h-7 text-[#08D9D6]" />
+            </div>
+            <h3 className="text-2xl font-bold mb-3">Carpooling conciertos</h3>
+            <p className="text-gray-400">
+              Compartir coche conciertos nunca fue tan fácil. Ahorra dinero y conoce gente mientras viajas a tu evento favorito.
+            </p>
+          </div>
+
+          {/* Feature 3 */}
+          <div className="p-8 rounded-3xl bg-gradient-to-br from-[#1E1E24] to-[#121212] border border-white/10 hover:border-[#9D4EDD]/50 transition-all transform hover:scale-105">
+            <div className="w-14 h-14 rounded-2xl bg-[#9D4EDD]/15 flex items-center justify-center mb-6">
+              <HomeIcon className="w-7 h-7 text-[#9D4EDD]" />
+            </div>
+            <h3 className="text-2xl font-bold mb-3">Alojamiento festivales</h3>
+            <p className="text-gray-400">
+              Encuentra alojamiento P2P entre fans. Viajar a conciertos barato compartiendo hospedaje con otros asistentes.
+            </p>
+          </div>
+
+          {/* Feature 4 */}
+          <div className="p-8 rounded-3xl bg-gradient-to-br from-[#1E1E24] to-[#121212] border border-white/10 hover:border-[#9D4EDD]/50 transition-all transform hover:scale-105">
+            <div className="w-14 h-14 rounded-2xl bg-[#9D4EDD]/15 flex items-center justify-center mb-6">
+              <Ticket className="w-7 h-7 text-[#9D4EDD]" />
+            </div>
+            <h3 className="text-2xl font-bold mb-3">App festivales música</h3>
+            <p className="text-gray-400">
+              Miles de eventos musicales actualizados. Descubre conciertos, festivales y shows en vivo cerca de ti.
+            </p>
+          </div>
+
+          {/* Feature 5 */}
+          <div className="p-8 rounded-3xl bg-gradient-to-br from-[#1E1E24] to-[#121212] border border-white/10 hover:border-[#FF2E63]/50 transition-all transform hover:scale-105">
+            <div className="w-14 h-14 rounded-2xl bg-[#FF2E63]/15 flex items-center justify-center mb-6">
+              <Heart className="w-7 h-7 text-[#FF2E63]" />
+            </div>
+            <h3 className="text-2xl font-bold mb-3">Red social musical</h3>
+            <p className="text-gray-400">
+              Más que una app para conciertos. Crea tu perfil, sigue artistas, guarda favoritos y construye tu comunidad musical.
+            </p>
+          </div>
+
+          {/* Feature 6 */}
+          <div className="p-8 rounded-3xl bg-gradient-to-br from-[#1E1E24] to-[#121212] border border-white/10 hover:border-[#08D9D6]/50 transition-all transform hover:scale-105">
+            <div className="w-14 h-14 rounded-2xl bg-[#08D9D6]/15 flex items-center justify-center mb-6">
+              <MapPin className="w-7 h-7 text-[#08D9D6]" />
+            </div>
+            <h3 className="text-2xl font-bold mb-3">Conciertos y alojamiento</h3>
+            <p className="text-gray-400">
+              Planifica todo desde un solo lugar. Encuentra el evento, organiza el transporte y reserva alojamiento en minutos.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How it Works */}
+      <section className="bg-gradient-to-b from-[#121212] to-[#1E1E24] py-16 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+              Cómo funciona LiveBeat
+            </h2>
+            <p className="text-xl text-gray-400">
+              Tres pasos para vivir la mejor experiencia musical
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#FF2E63] to-[#9D4EDD] flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                1
+              </div>
+              <h3 className="text-2xl font-bold mb-3">Descubre eventos</h3>
+              <p className="text-gray-400">
+                Explora miles de conciertos y festivales. Filtra por género, ciudad y fecha para encontrar tu próximo evento.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#FF2E63] to-[#9D4EDD] flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                2
+              </div>
+              <h3 className="text-2xl font-bold mb-3">Conecta con fans</h3>
+              <p className="text-gray-400">
+                Encuentra compañeros para conciertos, organiza carpooling y comparte alojamiento con otros asistentes.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-gradient-to-r from-[#FF2E63] to-[#9D4EDD] flex items-center justify-center mx-auto mb-6 text-2xl font-bold">
+                3
+              </div>
+              <h3 className="text-2xl font-bold mb-3">Vive la experiencia</h3>
+              <p className="text-gray-400">
+                Asiste al evento, conoce gente nueva y crea recuerdos inolvidables. Comparte tu experiencia en la comunidad.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Events */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="flex items-center justify-between mb-8">
+          <div>
+            <div className="flex items-center gap-2 mb-2">
+              <Sparkles className="w-6 h-6 text-[#FF2E63]" />
+              <h2 className="text-3xl md:text-4xl font-bold">Eventos destacados</h2>
+            </div>
+            <p className="text-gray-400">Los mejores conciertos de este mes</p>
+          </div>
+
+          <Link
+            to="/discover"
+            className="hidden md:flex items-center gap-2 px-6 py-3 bg-[#1E1E24] border border-white/10 rounded-xl hover:border-[#9D4EDD] transition-all font-medium"
+          >
+            Ver todos
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          {featuredEvents.map((event) => (
+            <EventCard key={event.id} event={event} />
+          ))}
+        </div>
+
+        <Link
+          to="/discover"
+          className="md:hidden flex items-center justify-center gap-2 w-full px-6 py-3 bg-[#1E1E24] border border-white/10 rounded-xl hover:border-[#9D4EDD] transition-all font-medium"
+        >
+          Ver todos los eventos
+          <ArrowRight className="w-4 h-4" />
+        </Link>
+      </section>
+
+      {/* CTA Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div className="relative rounded-3xl overflow-hidden">
+          <div className="absolute inset-0">
+            <img
+              src="https://images.unsplash.com/photo-1459749411175-04bf5292ceea?auto=format&fit=crop&w=1920&q=80"
+              alt="Festival de música"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#121212]/90 via-[#121212]/80 to-[#121212]/90" />
+          </div>
+
+          <div className="relative px-8 py-16 md:px-16 md:py-24 text-center">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+              Únete a miles de fans de conciertos
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              La mejor app festivales música para descubrir eventos, compartir coche, encontrar alojamiento y conocer gente nueva
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/login"
+                className="px-8 py-4 bg-gradient-to-r from-[#FF2E63] to-[#9D4EDD] rounded-full font-semibold hover:shadow-lg hover:shadow-[#FF2E63]/50 transition-all transform hover:scale-105 flex items-center justify-center gap-2"
+              >
+                Crear cuenta gratis
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
